@@ -149,7 +149,7 @@ export default function DashboardPage() {
                     const data = await res.json();
                     if (!res.ok) alert(data.detail || 'Error withdrawing');
                     else { alert(data.message); window.location.reload(); }
-                  } catch (e) { alert(e.message); }
+                  } catch (e: any) { alert(e.message); }
                   finally { btn.disabled = false; btn.innerText = 'Withdraw to Bank'; }
                 }}
                 className="text-sm font-bold mt-4 text-white bg-green-600 hover:bg-green-700 w-full px-3 py-2 rounded-xl transition-colors shadow-sm"
