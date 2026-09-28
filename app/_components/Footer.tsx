@@ -28,7 +28,7 @@ export function Footer() {
           {[
             ["How it works", "#how-it-works"],
             ["For creators", "#for-creators"],
-            ["Fees", "#fees"],
+            
             ["FAQ", "#faq"],
             ["Privacy", "#"],
             ["Terms", "#"],

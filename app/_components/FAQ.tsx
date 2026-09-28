@@ -5,11 +5,11 @@ import { PlusIcon } from "./Icons";
 const FAQS = [
   {
     q: "Which platforms does Tippa support?",
-    a: "Any platform where you can copy a share link: Instagram, TikTok, Facebook, and Snapchat. Paste the post URL into Tippa and we handle the rest.",
+    a: "Any platform where you can share a link: Instagram, TikTok, Facebook, Snapchat, X, and YouTube. You can use one master link in your bio or generate unique links per post.",
   },
   {
     q: "Do fans need to sign up to tip?",
-    a: "No. Fans click your tip link, pick a tier, and pay securely via bank transfer. No account or sign-up required.",
+    a: "No. Fans click your tip link, choose an amount, and pay securely via bank transfer. No account or sign-up required.",
   },
   {
     q: "How quickly do I receive my money?",
@@ -17,15 +17,15 @@ const FAQS = [
   },
   {
     q: "What are the tip amounts?",
-    a: "Fixed tiers: ₦1,000 · ₦5,000 · ₦20,000 · ₦50,000. A clear menu removes awkwardness for fans. The ₦1,000 minimum keeps transactions economically viable after fees.",
+    a: "We provide suggested tiers (₦1k – ₦50k) to make it easy for fans, but they can also enter any custom amount they prefer. A ₦1,000 minimum keeps transactions viable after fees.",
   },
   {
     q: "Does Tippa work outside Nigeria?",
-    a: "Currently, Tippa is built for Nigerian creators . International expansion comes later — based on demand.",
+    a: "Currently, Tippa is built for Nigerian creators. International expansion comes later based on demand.",
   },
   {
     q: "Is this different from Ko-fi or Buy Me a Coffee?",
-    a: "Yes. Those tools offer one static profile page. Tippa generates a unique tip page per post, so fans tip what they actually watched — and you see exactly which content earns.",
+    a: "Yes. Those tools offer one static profile page. While you can use Tippa exactly like that, we also let you generate unique links per post so you see exactly which content earns.",
   },
 ];
 

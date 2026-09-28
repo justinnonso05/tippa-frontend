@@ -45,7 +45,7 @@ export function Navbar() {
             [
               ["How it works", "#how-it-works"],
               ["For creators", "#for-creators"],
-              ["Fees", "#fees"],
+              
               ["FAQ", "#faq"],
             ].map(([label, href]) => (
               <a key={label} href={href} className="nav-link">
@@ -123,7 +123,7 @@ export function Navbar() {
               {[
                 ["How it works", "#how-it-works"],
                 ["For creators", "#for-creators"],
-                ["Fees", "#fees"],
+                
                 ["FAQ", "#faq"],
               ].map(([label, href]) => (
                 <a

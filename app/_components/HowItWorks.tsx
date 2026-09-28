@@ -20,7 +20,7 @@ const STEPS = [
   {
     num: "04",
     title: "Get paid directly",
-    desc: "Fans pick a tier and pay securely. Your share lands straight in your wallet instantly.",
+    desc: "Fans choose an amount and pay securely. Your share lands straight in your wallet instantly.",
   },
 ];
 

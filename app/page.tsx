@@ -4,8 +4,8 @@ import { MarqueeBand } from "./_components/MarqueeBand";
 import { StatementLine } from "./_components/StatementLine";
 import { HowItWorks } from "./_components/HowItWorks";
 import { FeatureCards } from "./_components/FeatureCards";
-import { Comparison } from "./_components/Comparison";
-import { Fees } from "./_components/Fees";
+import { Benefits } from "./_components/Benefits";
+
 import { FAQ } from "./_components/FAQ";
 import { CtaBand } from "./_components/CtaBand";
 import { Footer } from "./_components/Footer";
@@ -32,10 +32,10 @@ export default function LandingPage() {
       <FeatureCards />
 
       {/* 7. Comparison */}
-      <Comparison />
+      <Benefits />
 
-      {/* 8. Fees */}
-      <Fees />
+      
+      
 
       {/* 9. FAQ */}
       <FAQ />

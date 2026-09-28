@@ -6,24 +6,24 @@ import { ArrowUpRight } from "./Icons";
 
 const CARDS = [
   {
-    seed: "tippa-analytics",
+    image: "/card1.png",
     label: "Analytics",
     title: "Know what's working",
-    desc: "Every tip link tracks clicks and earnings by post. See exactly which content your audience values — insight no bank transfer can give you.",
+    desc: "Every tip link tracks clicks and earnings. Generate a unique link per post to see exactly which content your audience values.",
     tag: "Post Analytics",
   },
   {
-    seed: "tippa-payout",
+    image: "/card2.png",
     label: "Payouts",
     title: "Get paid your way",
-    desc: "Earnings go direct to your wallet and settle instantly. Fixed tip tiers — ₦1,000 · ₦5,000 · ₦20,000 · ₦50,000 — so fans know what to expect.",
+    desc: "Earnings go direct to your wallet and settle instantly. Offer suggested tip tiers or let your super fans type in a custom amount.",
     tag: "Direct Payouts",
   },
   {
-    seed: "tippa-creator",
+    image: "/card3.png",
     label: "Pricing",
     title: "No subscriptions",
-    desc: "No monthly platform fee, no lock-in. Tippa takes a small commission only when a tip is paid. You keep the rest, always.",
+    desc: "No monthly platform fee, no lock-in. Tippa takes a flat 5% platform commission only when a tip is paid. You keep the rest, always.",
     tag: "Creator-First",
   },
 ];
@@ -63,7 +63,7 @@ export function FeatureCards() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
           {CARDS.map((card) => (
             <article
-              key={card.seed}
+              key={card.image}
               className="card-bordered flex flex-col"
             >
               {/* Image block — NO border-bottom, image just ends naturally */}
@@ -77,7 +77,7 @@ export function FeatureCards() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`https://picsum.photos/seed/${card.seed}/600/300`}
+                  src={card.image}
                   alt={card.title}
                   style={{
                     width: "100%",

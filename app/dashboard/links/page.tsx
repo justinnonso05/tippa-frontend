@@ -118,6 +118,10 @@ export default function LinksPage() {
               </div>
               <div className="text-sm font-medium text-gray-500 flex items-center gap-2">
                 tippa.app/{link.slug}
+                <span className="text-gray-300">•</span>
+                <span className="text-gray-900 font-bold bg-gray-100 px-2 py-0.5 rounded-full text-xs flex items-center gap-1">
+                  {link.clicks || 0} clicks
+                </span>
                 {link.post_url && (
                   <>
                     <span className="text-gray-300">•</span>

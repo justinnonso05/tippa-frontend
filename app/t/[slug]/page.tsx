@@ -77,6 +77,12 @@ export default function TipPage({ params }: { params: Promise<{ slug: string }> 
         const data = await res.json();
         if (!res.ok) throw new Error(data.message || "Link not found");
         setLinkData(data.data);
+        
+        // Track click in background
+        if (data.data?.link?.id) {
+          const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api/v1";
+          fetch(`${baseUrl}/links/public/${data.data.link.id}/click`, { method: "POST" }).catch(() => {});
+        }
       } catch (err: any) {
         setError(err.message);
       } finally {
