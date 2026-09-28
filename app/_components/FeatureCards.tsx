@@ -16,7 +16,7 @@ const CARDS = [
     seed: "tippa-payout",
     label: "Payouts",
     title: "Get paid your way",
-    desc: "Earnings go direct to your bank via Paystack. Fixed tip tiers — ₦1,000 · ₦5,000 · ₦20,000 · ₦50,000 — so fans know what to expect.",
+    desc: "Earnings go direct to your wallet and settle instantly. Fixed tip tiers — ₦1,000 · ₦5,000 · ₦20,000 · ₦50,000 — so fans know what to expect.",
     tag: "Direct Payouts",
   },
   {

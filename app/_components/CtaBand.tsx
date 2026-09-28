@@ -31,7 +31,6 @@ export function CtaBand() {
           <span className="badge-corner tr" aria-hidden />
           <span className="badge-corner bl" aria-hidden />
           <span className="badge-corner br" aria-hidden />
-          <span style={{ color: "var(--color-accent)", fontSize: "0.8rem" }}>&#10022;</span>
           <span style={{ color: "var(--color-text-on-dark)" }}>Get started today</span>
         </div>
 
@@ -77,7 +76,7 @@ export function CtaBand() {
           className="mt-10 text-xs"
           style={{ color: "rgba(250,250,247,0.3)" }}
         >
-          Free to join &middot; Paystack-secured &middot; No subscriptions
+          Free to join &middot; Bank-level security &middot; No subscriptions
         </p>
       </div>
     </section>

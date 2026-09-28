@@ -8,7 +8,6 @@ function BadgeSelector({ text }: { text: string }) {
       <span className="badge-corner tr" aria-hidden />
       <span className="badge-corner bl" aria-hidden />
       <span className="badge-corner br" aria-hidden />
-      <span style={{ color: "var(--color-accent)", fontSize: "0.8rem" }}>&#10022;</span>
       <span>{text}</span>
     </div>
   );
@@ -32,7 +31,7 @@ export function Hero() {
         {/* ── LEFT ── */}
         <div className="flex flex-col items-start">
           <div className="h-anim mb-7">
-            <BadgeSelector text="Hi creators, this is Tippa" />
+            <BadgeSelector text="Turn your audience into income" />
           </div>
 
           <h1
@@ -54,7 +53,7 @@ export function Hero() {
             style={{ color: "var(--color-text-secondary)", maxWidth: 440 }}
           >
             Paste a post link from Instagram, TikTok, Facebook or Snapchat.
-            Get a tip page. Share it. Get paid direct to your bank via Paystack.
+            Get a tip page. Share it. Get paid instantly to your bank account.
           </p>
 
           <div className="h-anim h-anim-3 flex flex-wrap items-center gap-4 mb-10">

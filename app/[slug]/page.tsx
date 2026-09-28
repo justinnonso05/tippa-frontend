@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { API_ENDPOINTS } from "@/app/_lib/api";
 import { Loader2 } from "lucide-react";
 
@@ -373,7 +374,7 @@ export default function TipPage({ params }: { params: Promise<{ slug: string }> 
         )}
         <div className="mt-8 text-center">
           <Link href="/" className="inline-flex items-center gap-1 text-sm font-black text-gray-900 opacity-70 hover:opacity-100 transition-opacity">
-            Powered by Tippa
+            Powered by <Image src="/tippa-logo.png" alt="Tippa" width={65} height={18} className="ml-1 inline-block opacity-80" />
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>

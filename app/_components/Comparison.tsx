@@ -13,7 +13,7 @@ const ROWS: Row[] = [
   {
     label: "Fan experience",
     old: "Copy account number. Open banking app. Send manually.",
-    tippa: "One link, one tap, one card payment. Done in under 30 seconds.",
+    tippa: "One link, one tap, one quick bank transfer. Done in seconds.",
   },
   {
     label: "Tip tiers",

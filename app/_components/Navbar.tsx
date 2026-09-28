@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "./Icons";
 
@@ -35,22 +36,8 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-extrabold text-xl tracking-tight no-underline"
-          style={{ color: "var(--color-dark)" }}
-        >
-          <span
-            className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black"
-            style={{
-              background: "var(--color-accent)",
-              color: "var(--color-white)",
-              border: "2px solid var(--color-dark)",
-            }}
-          >
-            T
-          </span>
-          Tippa.
+        <Link href="/">
+          <Image src="/tippa-logo.png" alt="Tippa" width={110} height={32} />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

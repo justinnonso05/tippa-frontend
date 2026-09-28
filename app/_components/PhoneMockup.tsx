@@ -108,7 +108,7 @@ export function PhoneMockup() {
               paddingTop: 4,
             }}
           >
-            Secured by Paystack &middot; One-time &middot; No sign-up
+            Secure Transfers &middot; One-time &middot; No sign-up
           </p>
         </div>
       </div>

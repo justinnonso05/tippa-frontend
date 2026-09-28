@@ -7,7 +7,7 @@ const ITEMS = [
   "Instant post analytics",
   "Direct bank payouts",
   "No subscriptions",
-  "Powered by Paystack",
+  "Secure bank transfers",
   "Works on Instagram, TikTok, Facebook & Snapchat",
 ];
 

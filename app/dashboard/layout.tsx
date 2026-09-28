@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { LayoutDashboard, User, Building2, Menu, X, LogOut, Link as LinkIcon, Heart } from "lucide-react";
 
@@ -28,16 +29,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="h-screen flex flex-col bg-white overflow-hidden">
       {/* Top Header */}
       <header className="h-14 flex items-center justify-between px-6 bg-white shrink-0 z-50">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-extrabold text-xl tracking-tight no-underline text-[var(--color-dark)]"
-        >
-          <span
-            className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black bg-[var(--color-accent)] text-white border-2 border-[var(--color-dark)]"
-          >
-            T
-          </span>
-          Tippa
+        <Link href="/" className="flex items-center">
+          <Image src="/tippa-logo.png" alt="Tippa" width={110} height={32} />
         </Link>
         
         <div className="flex items-center gap-4">

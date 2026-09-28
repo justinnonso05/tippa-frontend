@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /* Footer — dark, flat, thick top border */
 export function Footer() {
   const year = new Date().getFullYear();
@@ -14,17 +16,7 @@ export function Footer() {
         {/* Logo */}
         <div>
           <div className="flex items-center gap-2.5 font-extrabold text-xl tracking-tight mb-2">
-            <span
-              className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-black"
-              style={{
-                background: "var(--color-accent)",
-                color: "var(--color-white)",
-                border: "2px solid rgba(255,255,255,0.2)",
-              }}
-            >
-              T
-            </span>
-            <span style={{ color: "var(--color-text-on-dark)" }}>Tippa</span>
+            <Image src="/tippa-logo.png" alt="Tippa" width={110} height={32} />
           </div>
           <p className="text-xs" style={{ color: "rgba(250,250,247,0.3)" }}>
             &copy; {year} Tippa. All rights reserved.
@@ -51,7 +43,7 @@ export function Footer() {
         <p className="text-xs" style={{ color: "rgba(250,250,247,0.28)" }}>
           Payments by{" "}
           <span style={{ color: "var(--color-accent)", fontWeight: 700 }}>
-            Paystack
+            Secure Transfers
           </span>
         </p>
       </div>

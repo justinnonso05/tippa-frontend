@@ -9,11 +9,11 @@ const FAQS = [
   },
   {
     q: "Do fans need to sign up to tip?",
-    a: "No. Fans click your tip link, pick a tier, and pay once via Paystack. No account, no sign-up, no saved card required.",
+    a: "No. Fans click your tip link, pick a tier, and pay securely via bank transfer. No account or sign-up required.",
   },
   {
     q: "How quickly do I receive my money?",
-    a: "Tips accumulate as pending until Paystack settles them. Payouts trigger automatically once your balance crosses ₦2,000. Exact timing depends on Paystack's settlement schedule for your subaccount.",
+    a: "Tips settle instantly into your Tippa wallet. You can withdraw them directly to your bank account from your dashboard at any time.",
   },
   {
     q: "What are the tip amounts?",
@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: "Does Tippa work outside Nigeria?",
-    a: "Currently, Tippa is built for Nigerian creators using Paystack. International expansion comes later — based on demand.",
+    a: "Currently, Tippa is built for Nigerian creators . International expansion comes later — based on demand.",
   },
   {
     q: "Is this different from Ko-fi or Buy Me a Coffee?",

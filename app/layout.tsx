@@ -15,14 +15,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tippa — Tip links for every post",
   description:
-    "African content creators: paste a post link, get a tip page, get paid. Powered by Paystack.",
+    "Paste a post link, get a tip page, get paid instantly to your wallet.",
+  metadataBase: new URL("https://tippa.me"),
   openGraph: {
     title: "Tippa — Tip links for every post",
     description:
       "Paste a post link, get a tip page, get paid. Every post you make already has an audience. Tippa turns that audience into income.",
     type: "website",
+    images: [{ url: "/tippa-logo.png", width: 1200, height: 630 }],
   },
 };
+
+interface LayoutProps<T> {
+  children: React.ReactNode;
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
