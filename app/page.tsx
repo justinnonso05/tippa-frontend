@@ -9,6 +9,7 @@ import { Benefits } from "./_components/Benefits";
 import { FAQ } from "./_components/FAQ";
 import { CtaBand } from "./_components/CtaBand";
 import { Footer } from "./_components/Footer";
+import { Reveal } from "./_components/Reveal";
 
 export default function LandingPage() {
   return (
@@ -17,31 +18,28 @@ export default function LandingPage() {
       <Navbar />
 
       {/* 2. Hero */}
-      <Hero />
+      <Reveal><Hero /></Reveal>
 
       {/* 3. Marquee strip */}
-      <MarqueeBand />
+      <Reveal><MarqueeBand /></Reveal>
 
       {/* 4. Bold statement line */}
-      <StatementLine />
+      <Reveal><StatementLine /></Reveal>
 
       {/* 5. How It Works */}
-      <HowItWorks />
+      <Reveal><HowItWorks /></Reveal>
 
       {/* 6. Feature cards */}
-      <FeatureCards />
+      <Reveal><FeatureCards /></Reveal>
 
       {/* 7. Comparison */}
-      <Benefits />
-
-      
-      
+      <Reveal><Benefits /></Reveal>
 
       {/* 9. FAQ */}
-      <FAQ />
+      <Reveal><FAQ /></Reveal>
 
       {/* 10. Dark closing CTA */}
-      <CtaBand />
+      <Reveal><CtaBand /></Reveal>
 
       {/* 11. Footer */}
       <Footer />

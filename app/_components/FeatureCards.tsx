@@ -1,7 +1,4 @@
-/* Feature cards — matching reference exactly:
-   - Image full-bleed at top of card (no border between image and text)
-   - Clear visual gap between image bottom and text block
-   - Tag chip as small pill below description */
+/* Feature cards */
 import { ArrowUpRight } from "./Icons";
 
 const CARDS = [
@@ -36,7 +33,6 @@ export function FeatureCards() {
       style={{ backgroundColor: "var(--color-bg)" }}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Section header */}
         <div className="mb-14">
           <div className="badge-selector mb-5 inline-flex">
             <span className="badge-corner tl" aria-hidden />
@@ -59,26 +55,24 @@ export function FeatureCards() {
           </h2>
         </div>
 
-        {/* Card grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
           {CARDS.map((card) => (
             <article
               key={card.image}
-              className="card-bordered flex flex-col"
+              className="card-bordered flex flex-col group hover:bg-[var(--color-dark)] transition-colors duration-500 ease-out"
             >
-              {/* Image block — NO border-bottom, image just ends naturally */}
               <div
                 style={{
                   height: 210,
                   overflow: "hidden",
                   position: "relative",
-                  /* Deliberately no border-bottom here — gap comes from text padding */
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={card.image}
                   alt={card.title}
+                  className="group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -88,30 +82,24 @@ export function FeatureCards() {
                 />
               </div>
 
-              {/* Text block — top padding creates the visual gap from image */}
               <div
                 className="flex flex-col flex-1"
                 style={{ padding: "1.4rem 1.4rem 1.4rem" }}
               >
-                {/* Title */}
                 <h3
-                  className="font-extrabold text-xl leading-snug mb-2"
+                  className="font-extrabold text-xl leading-snug mb-2 group-hover:text-[var(--color-bg)] transition-colors duration-500"
                   style={{ color: "var(--color-dark)" }}
                 >
                   {card.title}
                 </h3>
-
-                {/* Description */}
                 <p
-                  className="text-sm leading-relaxed flex-1 mb-4"
+                  className="text-sm leading-relaxed flex-1 mb-4 group-hover:text-gray-300 transition-colors duration-500"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   {card.desc}
                 </p>
-
-                {/* Tag chip — pill, small, at the bottom. Matching reference */}
                 <div className="flex items-center justify-between">
-                  <span className="tag-chip">{card.tag}</span>
+                  <span className="tag-chip group-hover:bg-white/10 group-hover:text-white transition-colors duration-500">{card.tag}</span>
                 </div>
               </div>
             </article>

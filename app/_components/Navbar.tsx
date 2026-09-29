@@ -10,6 +10,7 @@ export function Navbar() {
   const [open, setOpen]       = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [hoveredRect, setHoveredRect] = useState({ left: 0, width: 0, opacity: 0 });
 
   useEffect(() => {
     const token = localStorage.getItem("tippa_token");
@@ -36,7 +37,7 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "navbar-glass" : ""}`}
       style={{
-        backgroundColor: scrolled ? undefined : "var(--color-bg)",
+        backgroundColor: open ? "#ffffff" : (scrolled ? undefined : "var(--color-bg)"),
       }}
     >
       <div className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
@@ -45,7 +46,7 @@ export function Navbar() {
           <Image src="/tippa-logo.png" alt="Tippa" width={110} height={32} />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8 relative" onMouseLeave={() => setHoveredRect(prev => ({ ...prev, opacity: 0 }))}>
           {!isAuthenticated && (
             [
               ["How it works", "#how-it-works"],
@@ -53,10 +54,29 @@ export function Navbar() {
               
               ["FAQ", "#faq"],
             ].map(([label, href]) => (
-              <a key={label} href={href} className="nav-link">
+              <a 
+                key={label} 
+                href={href} 
+                className="nav-link relative z-10"
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget;
+                  setHoveredRect({ left: el.offsetLeft, width: el.offsetWidth, opacity: 1 });
+                }}
+              >
                 {label}
               </a>
             ))
+          )}
+          {!isAuthenticated && (
+            <div 
+              className="absolute bottom-[-4px] h-[2px] bg-[var(--color-accent)] transition-all duration-300 ease-out z-0"
+              style={{
+                left: hoveredRect.left,
+                width: hoveredRect.width,
+                opacity: hoveredRect.opacity,
+                transform: hoveredRect.opacity ? 'scaleX(1)' : 'scaleX(0.5)'
+              }}
+            />
           )}
         </nav>
 
@@ -116,57 +136,57 @@ export function Navbar() {
       </div>
 
       {/* Mobile drawer backdrop */}
-      {open && (
-        <div 
-          className="fixed inset-0 z-40 bg-black/40 md:hidden" 
-          style={{ top: "64px" }}
-          onClick={() => setOpen(false)}
-        />
-      )}
+      <div 
+        className={`fixed inset-0 z-40 bg-black/40 md:hidden transition-opacity duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        style={{ top: "64px" }}
+        onClick={() => setOpen(false)}
+      />
       
       {/* Mobile drawer */}
-      {open && (
-        <div
-          className="absolute top-full left-0 w-full z-50 md:hidden px-5 pb-6 pt-4 flex flex-col gap-5 border-b shadow-xl"
-          style={{ background: scrolled ? "rgba(250,250,247,0.98)" : "var(--color-bg)", borderColor: "rgba(0,0,0,0.05)" }}
-        >
-          {isAuthenticated ? (
-            <button onClick={() => { handleLogout(); setOpen(false); }} className="nav-link text-base font-bold text-left text-red-600">Log out</button>
-          ) : (
-            <>
-              {[
-                ["How it works", "#how-it-works"],
-                ["For creators", "#for-creators"],
-                
-                ["FAQ", "#faq"],
-              ].map(([label, href]) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="nav-link text-base"
+      <div
+        className={`absolute top-full left-0 w-full z-50 md:hidden grid transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'}`}
+        style={{ background: open ? "#ffffff" : (scrolled ? "rgba(250,250,247,0.98)" : "var(--color-bg)"), borderColor: "rgba(0,0,0,0.05)" }}
+      >
+        <div className="overflow-hidden min-h-0">
+          <div className="px-5 pb-6 pt-4 flex flex-col gap-5 border-b shadow-xl">
+            {isAuthenticated ? (
+              <button onClick={() => { handleLogout(); setOpen(false); }} className="nav-link text-base font-bold text-left text-red-600">Log out</button>
+            ) : (
+              <>
+                {[
+                  ["How it works", "#how-it-works"],
+                  ["For creators", "#for-creators"],
+                  
+                  ["FAQ", "#faq"],
+                ].map(([label, href]) => (
+                  <a
+                    key={label}
+                    href={href}
+                    className="nav-link text-base"
+                    onClick={() => setOpen(false)}
+                  >
+                    {label}
+                  </a>
+                ))}
+                <Link
+                  href="/login"
+                  className="nav-link text-base font-bold"
                   onClick={() => setOpen(false)}
                 >
-                  {label}
-                </a>
-              ))}
-              <Link
-                href="/login"
-                className="nav-link text-base font-bold"
-                onClick={() => setOpen(false)}
-              >
-                Log in
-              </Link>
-              <Link
-                href="/signup"
-                className="btn-stack w-fit"
-                onClick={() => setOpen(false)}
-              >
-                Start earning <ArrowUpRight size={14} />
-              </Link>
-            </>
-          )}
+                  Log in
+                </Link>
+                <Link
+                  href="/signup"
+                  className="btn-stack w-fit"
+                  onClick={() => setOpen(false)}
+                >
+                  Start earning <ArrowUpRight size={14} />
+                </Link>
+              </>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
