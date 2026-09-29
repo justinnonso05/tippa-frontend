@@ -15,7 +15,12 @@ export function Navbar() {
     const token = localStorage.getItem("tippa_token");
     setIsAuthenticated(!!token);
 
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 30);
+      if (window.scrollY > 30) {
+        setOpen(false);
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -110,11 +115,20 @@ export function Navbar() {
         </button>
       </div>
 
+      {/* Mobile drawer backdrop */}
+      {open && (
+        <div 
+          className="fixed inset-0 z-40 bg-black/40 md:hidden" 
+          style={{ top: "64px" }}
+          onClick={() => setOpen(false)}
+        />
+      )}
+      
       {/* Mobile drawer */}
       {open && (
         <div
-          className="md:hidden px-5 pb-6 flex flex-col gap-5"
-          style={{ background: scrolled ? "rgba(250,250,247,0.92)" : "var(--color-bg)" }}
+          className="absolute top-full left-0 w-full z-50 md:hidden px-5 pb-6 pt-4 flex flex-col gap-5 border-b shadow-xl"
+          style={{ background: scrolled ? "rgba(250,250,247,0.98)" : "var(--color-bg)", borderColor: "rgba(0,0,0,0.05)" }}
         >
           {isAuthenticated ? (
             <button onClick={() => { handleLogout(); setOpen(false); }} className="nav-link text-base font-bold text-left text-red-600">Log out</button>

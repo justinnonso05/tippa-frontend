@@ -31,7 +31,7 @@ export function Benefits() {
   return (
     <section
       id="benefits"
-      className="py-24 px-5 sm:px-8"
+      className="py-16 md:py-24 px-5 sm:px-8"
       style={{ backgroundColor: "var(--color-section-bg)" }}
     >
       <div className="max-w-4xl mx-auto">

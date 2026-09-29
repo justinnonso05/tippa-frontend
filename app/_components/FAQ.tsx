@@ -35,7 +35,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-24 px-5 sm:px-8"
+      className="py-16 md:py-24 px-5 sm:px-8"
       style={{ backgroundColor: "var(--color-section-bg)" }}
     >
       <div className="max-w-3xl mx-auto">

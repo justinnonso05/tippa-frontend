@@ -6,7 +6,7 @@ export function CtaBand() {
   return (
     <section
       id="get-started"
-      className="py-24 px-5 sm:px-8 relative overflow-hidden"
+      className="py-16 md:py-24 px-5 sm:px-8 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-dark)" }}
     >
       {/* Accent blob accents — flat, no gradient */}

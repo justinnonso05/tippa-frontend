@@ -26,7 +26,7 @@ export function Hero() {
       className="min-h-[88vh] flex items-center"
       style={{ backgroundColor: "var(--color-bg)" }}
     >
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-0 w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 items-center">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-0 w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 items-center">
 
         {/* ── LEFT ── */}
         <div className="flex flex-col items-start">
@@ -94,7 +94,7 @@ export function Hero() {
 
         {/* ── RIGHT — layered graphic with home.png ── */}
         <div
-          className="h-anim h-anim-5 relative flex justify-center md:justify-end items-center"
+          className="h-anim h-anim-5 hidden md:flex relative justify-end items-center"
           style={{ height: 520 }}
         >
           {/* Orange organic blob — behind and to bottom-right */}

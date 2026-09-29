@@ -28,7 +28,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-24 px-5 sm:px-8"
+      className="py-16 md:py-24 px-5 sm:px-8"
       style={{ backgroundColor: "var(--color-section-bg)" }}
     >
       <div className="max-w-6xl mx-auto">
